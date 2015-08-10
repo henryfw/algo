@@ -8,9 +8,11 @@ class Recorder :
 
 
     def add(self, value):
-        self.values.append(value)
+        self.values.append(value[:])
 
 
+    def clear(self):
+        self.values = []
 
     def get_values(self):
         return self.values

@@ -1,26 +1,26 @@
 
 
-def bubble_sort(input):
+def bubble_sort(inputs):
 
-    for i in range(len(input)-1, -1, -1):
+    for i in range(len(inputs)-1, -1, -1):
         for j in range(0, i):
-            if input[j] > input[j + 1] :
-                swap(input, j, j + 1)
+            if inputs[j] > inputs[j + 1] :
+                swap(inputs, j, j + 1)
 
 
 
 
 
-def swap(input, i, j) :
-    tmp = input[i];
-    input[i] = input[j];
-    input[j] = tmp
+def swap(inputs, i, j) :
+    tmp = inputs[i]
+    inputs[i] = inputs[j]
+    inputs[j] = tmp
 
 
 
 if __name__ == '__main__':
-    input = [
+    inputs = [
         1, 23, 4, 434, 232, 324, 11, 2323, 5
     ]
-    bubble_sort(input)
-    print input
+    bubble_sort(inputs)
+    print inputs

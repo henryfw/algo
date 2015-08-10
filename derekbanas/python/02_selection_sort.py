@@ -2,30 +2,30 @@ from recorder import Recorder
 record = Recorder()
 
 
-def selection_sort(input):
-    for i in range(0, len(input)) :
+def selection_sort(inputs):
+    for i in range(0, len(inputs)) :
         smallest = i
-        for j in range(i, len(input)) :
-            if input[j] < input[smallest] :
+        for j in range(i, len(inputs)) :
+            if inputs[j] < inputs[smallest] :
                 smallest = j
-        swap(input, i, smallest)
-        record.add(input[:])
+        swap(inputs, i, smallest)
+        record.add(inputs)
 
 
 
 
 
-def swap(input, i, j) :
-    tmp = input[i];
-    input[i] = input[j];
-    input[j] = tmp
+def swap(inputs, i, j) :
+    tmp = inputs[i];
+    inputs[i] = inputs[j];
+    inputs[j] = tmp
 
 
 
 if __name__ == '__main__':
-    input = [
+    inputs = [
         1, 23, 4, 434, 232, 324, 11, 2323, 5
     ]
-    selection_sort(input)
-    #print input
+    selection_sort(inputs)
+    #print inputs
     record.show()

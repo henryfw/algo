@@ -1,28 +1,28 @@
 <?php
 
-function swap(&$input, $i, $j){
-    $tmp = $input[$i];
-    $input[$i] = $input[$j];
-    $input[$j] = $tmp;
+function swap(&$inputs, $i, $j){
+    $tmp = $inputs[$i];
+    $inputs[$i] = $inputs[$j];
+    $inputs[$j] = $tmp;
 }
 
 
-function bubble_sort(&$input) {
-    for ($i = count($input) - 1; $i >= 0; $i --) {
+function bubble_sort(&$inputs) {
+    for ($i = count($inputs) - 1; $i >= 0; $i --) {
         for ($j = 0; $j < $i; $j ++ ) {
-            if ($input[$j] > $input[$j + 1]) {
-                swap($input, $j, $j + 1);
+            if ($inputs[$j] > $inputs[$j + 1]) {
+                swap($inputs, $j, $j + 1);
             }
         }
     }
 }
 
 
-$input = [
+$inputs = [
     1, 23, 4, 434, 232, 324, 11, 2323, 5
 ];
 
 
-bubble_sort($input);
+bubble_sort($inputs);
 
-print_r($input);
+print_r($inputs);
