@@ -36,6 +36,9 @@ $inputs = [
 
 
 insertion_sort($inputs);
+
+print_r($inputs);
+
 insertion_sort_2($inputs);
 
 print_r($inputs);
