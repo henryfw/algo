@@ -57,6 +57,12 @@ def merge(left, right) :
 
 
 
+
+# http://www.algolist.net/Algorithms/Merge/Sorted_arrays
+# merge 2 sorted arrays
+
+
+
 if __name__ == '__main__':
     inputs = [
         1, 23, 4, 434, 232, 324, 11, 2323, 5

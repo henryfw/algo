@@ -25,7 +25,7 @@ def quick_sort_body(inputs, left, right):
                 right -= 1
 
         record.add(inputs)
-        print "left: %d to %d, right: %d to %d" % (start, right, left, end)
+        # print "left: %d to %d, right: %d to %d" % (start, right, left, end)
         quick_sort_body(inputs, start, right)
         quick_sort_body(inputs, left, end)
 
@@ -39,3 +39,6 @@ if __name__ == '__main__':
 
     # first pass: pivot = 5
     # 1, 5, 4, <break here for next pass> 434, 232, 324, 11, 2323, 23
+
+
+
