@@ -12,7 +12,15 @@ http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-adv
 
 #udacity algo
 
-https://www.udacity.com/course/intro-to-algorithms--cs215 
+https://www.udacity.com/course/intro-to-algorithms--cs215
+
+#stanford algo design and analysis part 1
+
+https://www.coursera.org/course/algo
+
+#stanford algo design and analysis part 2
+
+https://www.coursera.org/course/algs4partII
 
 #udacity ai robotics
 

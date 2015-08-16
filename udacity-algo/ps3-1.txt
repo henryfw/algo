@@ -1,0 +1,14 @@
+n = connected neighbors
+e = shared edge between neights
+
+c = cluster coeff = 2e/(n*(n-1))
+
+a) n = 5, e = 5, c = 10/20 = .5
+b) n = 7, e = 2, c = 4/42 = .095
+c) n = 5, e = 0, c = 0
+d) n = 4, e = 6, c = 12/12 = 1
+e) n = 7, e = 7, c = 14/42 = .33
+f) n = 5, e = 2, c = 4/20 = .2
+
+
+order: cbfead

@@ -59,8 +59,12 @@ class Min_Heap:
         right_index = self.get_right_index(node_index)
         index_to_use = -1
 
+
         if left_index < self.size and self.data[left_index] < self.data[node_index]:
-            index_to_use = left_index
+            if right_index < self.size:
+                index_to_use = left_index if self.data[left_index] <= self.data[right_index] else right_index
+            else:
+                index_to_use = left_index
         elif right_index < self.size and self.data[right_index] < self.data[node_index]:
             index_to_use = right_index
 

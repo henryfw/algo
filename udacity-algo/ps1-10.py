@@ -20,7 +20,6 @@ def getEdgeId(x, y):
 # try dfs
 def dfs(path, outgoingNodes, usedEdges, edgeTotal):
     # print path
-
     for node in outgoingNodes:
         edgeId = getEdgeId(node, path[-1])
         if edgeId not in usedEdges:
@@ -37,10 +36,7 @@ def dfs(path, outgoingNodes, usedEdges, edgeTotal):
                 result = dfs(tmpPath, globalNodes[node], tmpUsedEdges, edgeTotal)
                 if result is not None:
                     return result
-
     return None
-
-
 
 def find_eulerian_tour(graph):
 

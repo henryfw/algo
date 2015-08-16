@@ -71,11 +71,18 @@ class MinHeap {
         $right_index = $this->getRightIndex($index);
         $index_to_use = -1;
         if ($left_index < $this->size && $this->data[$left_index] < $this->data[$index]) {
-            $index_to_use = $left_index;
+            if ($right_index < $this->size) {
+                $index_to_use = $this->data[$left_index] <= $this->data[$right_index] ? $left_index : $right_index;
+            }
+            else {
+                $index_to_use = $left_index;
+            }
+
         }
         else if ($right_index < $this->size && $this->data[$right_index] < $this->data[$index]) {
             $index_to_use = $right_index;
         }
+
         if ($index_to_use != -1) {
             $tmp = $this->data[$index];
             $this->data[$index] = $this->data[$index_to_use];
