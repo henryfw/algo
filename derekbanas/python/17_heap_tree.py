@@ -59,16 +59,15 @@ class Min_Heap:
         right_index = self.get_right_index(node_index)
         index_to_use = -1
 
-
-        if left_index < self.size and self.data[left_index] < self.data[node_index]:
-            if right_index < self.size:
-                index_to_use = left_index if self.data[left_index] <= self.data[right_index] else right_index
+        if right_index < self.size:
+            if self.data[right_index] < self.data[left_index]:
+                index_to_use = right_index
             else:
                 index_to_use = left_index
-        elif right_index < self.size and self.data[right_index] < self.data[node_index]:
-            index_to_use = right_index
+        elif left_index < self.size:
+            index_to_use = left_index
 
-        if index_to_use != -1:
+        if index_to_use != -1 and self.data[index_to_use] < self.data[node_index]:
             tmp = self.data[node_index]
             self.data[node_index] = self.data[index_to_use]
             self.data[index_to_use] = tmp
@@ -77,7 +76,7 @@ class Min_Heap:
     def sort(self):
         result = []
         tmp = Min_Heap(self.max_size)
-        tmp.data = self.data
+        tmp.data = self.data[:]
         tmp.size = self.size
         while tmp.size > 0:
             result.append(tmp.remove_min())

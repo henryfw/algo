@@ -59,18 +59,15 @@ MinHeap.prototype.siftDown = function(index) {
     var leftIndex = this.getLeftIndex(index);
     var rightIndex = this.getRightIndex(index);
     var indexToUse = -1;
-    if (leftIndex < this.size && this.data[leftIndex] < this.data[index]) {
-        if (rightIndex < this.size) {
-            indexToUse = this.data[leftIndex] <= this.data[rightIndex] ? leftIndex : rightIndex;
-        }
-        else {
-            indexToUse = leftIndex;
-        }
+
+    if (rightIndex < this.size) {
+        indexToUse = this.data[leftIndex] < this.data[rightIndex] ? leftIndex : rightIndex;
     }
-    else if (rightIndex < this.size && this.data[rightIndex] < this.data[index]) {
-        indexToUse = rightIndex;
+    else if (leftIndex < this.size) {
+        indexToUse = leftIndex;
     }
-    if (indexToUse != -1) {
+
+    if (indexToUse != -1 && this.data[index] > this.data[indexToUse]) {
         var tmp = this.data[index];
         this.data[index] = this.data[indexToUse];
         this.data[indexToUse] = tmp;
