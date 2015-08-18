@@ -91,6 +91,15 @@ class MinHeap {
         }
     }
 
+    public function sort() {
+        $tmp = clone $this;
+        $result = array();
+        while ($tmp->size > 0) {
+            $result[] = $tmp->removeMin();
+        }
+        return $result;
+    }
+
     public function __toString() {
         $value = "";
         $i = $this->size;
@@ -117,6 +126,10 @@ foreach($inputs AS $v) {
 }
 
 echo $tree . "\n\n";
+
+print_r( $tree->sort());
+
+echo "\n\n";
 
 echo $tree->removeMin() . "\n\n";
 

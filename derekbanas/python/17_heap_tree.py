@@ -74,6 +74,15 @@ class Min_Heap:
             self.data[index_to_use] = tmp
             self.sift_down(index_to_use)
 
+    def sort(self):
+        result = []
+        tmp = Min_Heap(self.max_size)
+        tmp.data = self.data
+        tmp.size = self.size
+        while tmp.size > 0:
+            result.append(tmp.remove_min())
+        return result
+
     def __str__(self):
         value = ""
         for i in range(0, self.size):
@@ -91,6 +100,8 @@ tree = Min_Heap(100)
 for i in inputs:
     tree.add(i)
 print tree
+
+print tree.sort()
 
 print tree.remove_min()
 

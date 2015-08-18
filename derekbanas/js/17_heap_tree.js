@@ -79,6 +79,17 @@ MinHeap.prototype.siftDown = function(index) {
 
 }
 
+MinHeap.prototype.sort = function() {
+    var tmp = new MinHeap(this.maxSize);
+    tmp.data = this.data.slice(0);
+    tmp.size = this.size;
+    var result = [];
+    while (tmp.size > 0) {
+        result.push(tmp.removeMin())
+    }
+    return result;
+}
+
 MinHeap.prototype.toString = function() {
     var value = "";
     var i = this.size ;
@@ -100,6 +111,7 @@ inputs.forEach(function(v) {
 });
 
 console.log( tree + "" );
+console.log( tree.sort() );
 console.log( tree.removeMin());
 console.log( tree + "" );
 
