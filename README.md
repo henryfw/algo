@@ -10,6 +10,22 @@ http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-int
 
 http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/index.htm
 
+# Top 10 Algorithms for Coding Interview
+
+http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
+
+# geeksquiz.com
+
+http://geeksquiz.com/
+
+# career cup
+
+http://www.careercup.com/page?pid=facebook-interview-questions&job=software-engineer-developer-interview-questions
+
+# techinterview.org/
+
+http://www.techinterview.org/
+
 #udacity algo
 
 https://www.udacity.com/course/intro-to-algorithms--cs215

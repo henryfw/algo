@@ -82,7 +82,7 @@ MinHeap.prototype.sort = function() {
     tmp.size = this.size;
     var result = [];
     while (tmp.size > 0) {
-        result.push(tmp.removeMin())
+        result.push(tmp.removeMin());
     }
     return result;
 }
