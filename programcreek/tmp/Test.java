@@ -1,26 +1,59 @@
+import java.util.*;
+
+
 public class Test {
 
+    static public ArrayList<ArrayList<Integer>> fourSum(int[] num, int target) {
+        Arrays.sort(num);
+
+        HashSet<ArrayList<Integer>> hashSet = new HashSet<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+
+        for (int i = 0; i < num.length; i++) {
+            for (int j = i + 1; j < num.length; j++) {
+                int k = j + 1;
+                int l = num.length - 1;
+
+                System.out.println(i + " " + j + " " + k + " " + l);
+
+                while (k < l) {
+                    int sum = num[i] + num[j] + num[k] + num[l];
 
 
-    public static void rotate(int[] arr, int order) {
-        if (arr == null || order < 0) {
-            throw new IllegalArgumentException("Illegal argument!");
-        }
+                    if (sum > target) {
+                        l--;
+                    } else if (sum < target) {
+                        k++;
+                    } else if (sum == target) {
+                        ArrayList<Integer> temp = new ArrayList<Integer>();
+                        temp.add(num[i]);
+                        temp.add(num[j]);
+                        temp.add(num[k]);
+                        temp.add(num[l]);
 
-        for (int i = 0; i < order; i++) {
-            for (int j = arr.length - 1; j > 0; j--) {
-                int temp = arr[j];
-                arr[j] = arr[j - 1];
-                arr[j - 1] = temp;
+                        if (!hashSet.contains(temp)) {
+                            hashSet.add(temp);
+                            result.add(temp);
+                        }
+
+                        k++;
+                        l--;
+                    }
+                }
             }
         }
+
+        return result;
     }
 
-
     public static void main(String[] args) {
-        int[] inputs = new int[]{1,2,3,4,5,6,7,8,9};
-        rotate(inputs, 3);
+        ArrayList<ArrayList<Integer>> ans = fourSum(new int[]{1,0,-1,0,-2,2}, 0);
 
-        System.out.println(inputs[0]);
+        for(ArrayList<Integer> items: ans) {
+            System.out.println(Arrays.deepToString(
+                    items.toArray()
+            ));
+        }
+
     }
 }
