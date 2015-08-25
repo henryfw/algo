@@ -1,18 +1,22 @@
 #derekbanas 
 
-All algorithms from https://www.youtube.com/playlist?list=PLGLfVvz_LVvReUrWr94U-ZMgjYTQ538nT in Python, PHP, and JavaScript.
+Algorithms from https://www.youtube.com/playlist?list=PLGLfVvz_LVvReUrWr94U-ZMgjYTQ538nT in Python, PHP, and JavaScript.
 
 #mit 6.006
 
-http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/ 
+Some algorithms from http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/
 
 #mit 6.851
 
-http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/index.htm
+Some algorithms from http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/index.htm
+
+# mcdowell
+
+Most algorithms from the book.
 
 # Top 10 Algorithms for Coding Interview
 
-http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
+Most of http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
 
 # geeksquiz.com
 
