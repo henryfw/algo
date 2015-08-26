@@ -11,24 +11,43 @@ def rotate(matrix):
         for i in range(first, last):
             offset = i - first
 
+            # top
+            matrix[first][i]
+
+            # right
+            matrix[i][last]
+
+            #bottom
+            matrix[last][last - offset]
+
+            #left
+            matrix[last - offset][first]
+
+
+
             top = matrix[first][i]
 
-            # left to top
+            # top <- left
             matrix[first][i] = matrix[last - offset][first]
 
-            # bottom to left
+            # left <- bottom
             matrix[last - offset][first] = matrix[last][last - offset]
 
+            # bottom <- right
+            matrix[last][last - offset] = matrix[i][last]
+
+            # right <- top
+            matrix[i][last] = top
 
 
 
-
-
-
-pprint.pprint(rotate([
-    [1,2,3,4,5], # left-most vertical column
-    [1,2,3,4,5], # 2nd column
+# reads as ans[y][x]
+ans = [
+    [1,2,3,4,5], # 1st row
+    [1,2,3,4,5], # 2nd row
     [1,2,3,4,5],
     [1,2,3,4,5],
-    [1,2,3,4,5], # last vertical column
-]))
+    [1,2,3,4,5],
+]
+rotate(ans)
+pprint.pprint(ans)
