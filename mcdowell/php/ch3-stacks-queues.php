@@ -15,6 +15,9 @@ class Stack {
     public function peek() {
         return end( $this->data );
     }
+    public function size() {
+        return count($this->data);
+    }
 
 }
 
