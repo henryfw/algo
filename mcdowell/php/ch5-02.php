@@ -25,4 +25,5 @@ function decToBinString($n) {
 }
 
 
-echo decToBinString(.12);
+echo decToBinString(.75);
+
