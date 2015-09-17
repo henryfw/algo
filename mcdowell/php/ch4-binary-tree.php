@@ -157,13 +157,13 @@ $tree->add(300);
 $tree->add(150);
 
 
-
+echo "Root: {$tree->root->val}\n\n";
 //$tree->root->inOrderTranverse();
 //echo "\n\n";
-//$tree->root->preOrderTranverse();
-//echo "\n\n";
-//$tree->root->postOrderTranverse();
-//echo "\n\n";
+$tree->root->preOrderTranverse();
+echo "\n\n";
+$tree->root->postOrderTranverse();
+echo "\n\n";
 
 //var_dump( $tree->remove(20) );
 //$tree->root->inOrderTranverse();

@@ -10,7 +10,7 @@ function quick_sort_body(&$inputs, $left, $right) {
     $end = $right;
 
     if ($left < $right) {
-        $pivot = $inputs[$right];
+        $pivot = $inputs[ floor(($left+$right)/2) ];
 
         while ($left <= $right) {
             while($inputs[$left] < $pivot) {
