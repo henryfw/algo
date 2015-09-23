@@ -10,15 +10,8 @@ function isMatch($str, $pattern) {
         return strlen($str) == 0;
     }
 
-    if (strlen($pattern) == 1) {
-        if (strlen($str) < 1) return false;
 
-        if ($pattern{0} != $str{0} && $pattern{0} != '.') return false;
-
-        return isMatch(substr($str, 1), substr($pattern, 1));
-    }
-
-    if ($pattern{1} != '*') {
+    if (strlen($pattern) == 1 || $pattern{1} != '*') {
 
         if (strlen($str) < 1) return false;
 
