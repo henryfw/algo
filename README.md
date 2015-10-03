@@ -53,7 +53,3 @@ https://www.coursera.org/course/algs4partII
 #udacity ai robotics
 
 https://www.udacity.com/course/artificial-intelligence-for-robotics--cs373
-
-<br><br><br><br><br><br><br>
-  
-Repitition is the mother of success ... but probably not algorithms.
