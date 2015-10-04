@@ -1,4 +1,6 @@
 <?php
+// prefix tree: search for substring in one string
+// suffix tree: search for longest common substring between many strings
 
 class PrefixTree {
     public $root = null;

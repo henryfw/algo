@@ -15,5 +15,5 @@ function getAllSubSet($inputs,  $index) {
 }
 
 
-$inputs = [1,2,3];
+$inputs = [1,2,3,4,5];
 print_r(getAllSubSet($inputs, count($inputs) - 1));
