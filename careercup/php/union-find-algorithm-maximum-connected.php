@@ -1,0 +1,3 @@
+<?php
+
+// Union Find algorithm
