@@ -3,27 +3,27 @@
 require "../../../mcdowell/php/ch2-linked-list.php";
 
 function mergeLinkedList(LinkedListNode $a, LinkedListNode $b) {
-    $newHead = new LinkedListNode(0);
-    $newTail = $newHead;
+    $dummyHead = new LinkedListNode(null);
+
+    $current = $dummyHead;
 
     while ($a && $b) {
-        appendNode($a->val <= $b->val ? $a : $b, $newTail);
+        if ($a->val <= $b->val) {
+            $current->next = $a;
+            $a = $a->next;
+        }
+        else {
+            $current->next = $b;
+            $b = $b->next;
+        }
+        $current = $current->next;
     }
 
-    $newTail->next = $a ? $a : $b;
+    $current->next = $a ? $a : $b;
 
-    return $newHead->next;
-
+    return $dummyHead->next;
 }
 
-function appendNode($node, &$tail) {
-    $tail->next = $node;
-    $tail = $node;
-    $node = $node->next;
-}
-
-
-mergeLinkedList($a->first, $b->first);
 
 
 
@@ -47,3 +47,9 @@ $list2->addValue(11);
 $list2->addValue(16);
 
 
+$head = mergeLinkedList($list->first, $list2->first);
+
+while($head) {
+    echo "{$head->val} ";
+    $head = $head->next;
+}

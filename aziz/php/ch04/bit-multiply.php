@@ -11,8 +11,6 @@ function multiply($x, $y) {
         }
         $x >>= 1;
         $y <<= 1;
-
-
      }
 
     return $sum;
