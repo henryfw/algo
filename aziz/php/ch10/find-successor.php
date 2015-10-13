@@ -13,7 +13,7 @@ function findSuccessor($tree) {
         return $iter;
     }
 
-    // find the closest ancestor whose elft subtree contains node
+    // find the closest ancestor whose left subtree contains node
     while ($iter->parent && $iter->parent->right == $iter) $iter = $iter->parent;
 
     return $iter->right;
