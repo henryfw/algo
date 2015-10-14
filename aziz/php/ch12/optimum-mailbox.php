@@ -1,0 +1,1 @@
+sort by distance from one end. use the median.
