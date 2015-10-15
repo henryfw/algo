@@ -1,9 +1,43 @@
 <?php
 
 function findAllSubstringInSentenceFromSet($sentence, $words) {
+    $dict = [];
+    foreach($words AS $word) {
+        if (!isset($dict[$word])) $dict[$word] = 0;
+        $dict[$word] ++;
+    }
+    $unitSize = strlen($words[0]);
 
+    $result = [];
+
+    for ($i = 0; $i + $unitSize * count($words) <= strlen($sentence); $i ++ ) {
+        if (matchAllWordsInDict($sentence, $dict, $i, count($words), $unitSize)) {
+            $result[] = $i;
+        }
+    }
+    return $result;
 }
 
+function matchAllWordsInDict($sentence, &$dict, $start, $numWords, $unitSize) {
+    $currDict = [];
+    for ($i = 0; $i < $numWords; $i ++ ){
+        $offset = $start + $i * $unitSize;
+        $l = $start + ($i + 1) * $unitSize - $offset;
+        $currWord = substr($sentence, $offset, $l);
+
+        if (!isset($dict[$currWord])) return false;
+        $iter = $dict[$currWord];
+
+        if (!isset($currDict[$currWord])) $currDict[$currWord] = 0;
+        $currDict[$currWord] ++;
+
+        if ($currDict[$currWord] > $iter) return false;
+    }
+
+    return true;
+}
+
+print_r(findAllSubstringInSentenceFromSet("amanaplanacanal", ['can', 'apl', 'ana']));
 /*
  public static List<Integer> findAllSubstrings(String s, String[] words) {
     Map<String, Integer> dict = new HashMap<>();
