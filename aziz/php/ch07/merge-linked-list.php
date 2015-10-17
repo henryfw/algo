@@ -1,6 +1,6 @@
 <?php
 
-require "../../../mcdowell/php/ch2-linked-list.php";
+require_once "../../../mcdowell/php/ch2-linked-list.php";
 
 function mergeLinkedList(LinkedListNode $a, LinkedListNode $b) {
     $dummyHead = new LinkedListNode(null);
