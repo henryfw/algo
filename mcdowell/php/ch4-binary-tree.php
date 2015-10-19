@@ -60,10 +60,10 @@ class BinarySearchTree implements BinaryTree {
                     $replacementNode = $this->findMinNode($pointer->right);
                     $pointer->val = $replacementNode->val;
                     if ($replacementNode->parent->left == $replacementNode) {
-                        $replacementNode->parent->left = null;
+                        $replacementNode->parent->left = $pointer->right;
                     }
                     else if ($replacementNode->parent->right == $replacementNode) {
-                        $replacementNode->parent->right = null;
+                        $replacementNode->parent->right = $pointer->right;
                     }
                 }
                 else {

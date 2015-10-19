@@ -1,5 +1,8 @@
 <?php
 
+require "../../../mcdowell/php/ch4-binary-tree.php";
+
+
 // $a val < $b val
 function findLowestCommonAncestorBst($root, $a, $b) {
     if ($b->val < $a->val) return findLowestCommonAncestorBst($root, $b, $a);
