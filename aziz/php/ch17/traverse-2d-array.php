@@ -11,9 +11,12 @@ function traverse2dArray($n, $m) {
         $prevRes = 0;
 
         for($j = 0; $j < $m; $j ++ ) {
+            echo "i: $i, j: $j, prev: $prevRes, oldAj: {$A[$j]}, newAj: " . ($A[$j] + $prevRes) . "\n";
             $A[$j] = $A[$j] + $prevRes;
             $prevRes = $A[$j];
         }
+        echo "\nafter $i pass\n";
+        print_r($A);
     }
 
     print_r($A);
@@ -21,4 +24,5 @@ function traverse2dArray($n, $m) {
     return $A[$m - 1];
 }
 
-echo traverse2dArray(5,15);
+echo traverse2dArray(5,5);
+
