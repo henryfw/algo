@@ -1,8 +1,5 @@
 <?php
 
-// this books sucks at explaining DP.
-// https://www.youtube.com/watch?v=WepWFGxiwRs&index=17&list=PLrmLmBdmIlpsHaNTPP_jHHDx_os9ItYXr
-// skip and watch youtube videos
 
 function wordBreaking($s, $dict) {
 
@@ -17,29 +14,28 @@ function wordBreaking($s, $dict) {
 
         if ($T[$i] == -1) {
             for ($j = 0; $j < $i; $j ++) {
-                if ($T[$j] != -1 && isset($dict[substr($j + 1, $i - $j)])) {
+                if ($T[$j] != -1 && isset($dict[substr($s, $j + 1, $i - $j  )])) {
                     $T[$i] = $i - $j;
                     break;
                 }
             }
         }
-
-        print_r($T);
-        $ret = [];
-        if (end($T) != -1) {
-            $index = strlen($s) -1;
-            while ($index >= 0) {
-                $ret[] = substr($s, $index + 1 - $T[$index], $index + 1);
-                $index -= $T[$index];
-            }
-            array_reverse($ret);
-        }
-
-        return $ret;
     }
+
+    $ret = [];
+    if (end($T) != -1) {
+        $index = strlen($s) -1;
+        while ($index >= 0) {
+            $ret[] = substr($s, $index + 1 - $T[$index], $index + 1);
+            $index -= $T[$index];
+        }
+        array_reverse($ret);
+    }
+
+    return $ret;
 }
 
 
-$ans = wordBreaking("iamace", ['i' => 1, 'am' => 1, 'ace' => 1]);
+$ans = wordBreaking('aabcedf', ['a'=>1,'abc'=>1, 'edf'=>1]);
 
 print_r($ans);
