@@ -4,6 +4,8 @@ function subsetSizeK($inputs, $k) {
     $ans = [];
     $partialCombination = [];
     helper($inputs, $k, 0, $partialCombination, $ans);
+
+    return $ans;
 }
 
 
@@ -27,4 +29,4 @@ function helper($inputs, $k, $offset, &$partialCombination, &$ans) {
 
 
 
-subsetSizeK([1,2,3,4],3);
+print_r(subsetSizeK([1,2,3,4,5],3));
