@@ -49,4 +49,31 @@ print_r($inputs);
 
 
 
+function qs(&$inputs, $left, $right) {
+    $start = $left;
+    $end = $right;
+
+    if ($left < $right) {
+        $pivot = $inputs[0];
+
+
+        while ($left <= $right) {
+            while($inputs[$left] < $pivot) {
+                $left++;
+            }
+            while($inputs[$right] > $pivot) {
+                $right ++;
+            }
+
+            if ($left <= $right) {
+                swap($inputs, $left, $right);
+                $left ++;
+                $right--;
+            }
+        }
+
+        qs($inputs, $start, $right);
+        qs($inputs, $left, $end);
+    }
+}
 
