@@ -2,85 +2,72 @@
 
 
 function solve($inputs) {
-    
+    $m = count($inputs);
+    $n = count($inputs[0]);
+    $queue = new SplDoublyLinkedList();
+
+    // left and right
+    for ($i = 0; $i < $m; $i ++ ) {
+        if ($inputs[$i][0] == 'o') {
+            bfs($inputs, $i, 0, $queue);
+        }
+        if ($inputs[$i][$n - 1] == 'o') {
+            bfs($inputs, $i, $n - 1, $queue);
+        }
+    }
+
+    // top and bottom
+    for ($j = 0; $j < $n; $j ++) {
+        if ($inputs[0][$j] == 'o') {
+            bfs($inputs, 0, $j, $queue);
+        }
+        if ($inputs[$m - 1][$j] == 'o') {
+            bfs($inputs, $m - 1, $j, $queue);
+        }
+    }
+
+    // rest
+    for ($i = 0; $i < $m; $i ++ ) {
+        for ($j = 0; $j < $n; $j ++) {
+            if ($inputs[$i][$j] == 'o') {
+                $inputs[$i][$j] = 'x';
+            }
+            else if ($inputs[$i][$j] == '#') {
+                $inputs[$i][$j] = 'o';
+            }
+        }
+    }
+
+
 }
 
 
+function bfs(&$inputs, $i, $j, SplDoublyLinkedList $queue) {
+    $n = count($inputs[0]);
 
-/*
-public class Solution {
-	// use a queue to do BFS
-	private Queue<Integer> queue = new LinkedList<Integer>();
+    // fill current
+    fillCell($inputs, $i, $j, $queue);
 
-	public void solve(char[][] board) {
-		if (board == null || board.length == 0)
-			return;
+    while($queue->count() > 0) {
+        $cur = $queue->shift();
+        $x = floor($cur / $n);
+        $y = $cur % $n;
 
-		int m = board.length;
-		int n = board[0].length;
-
-		// merge O's on left & right boarder
-		for (int i = 0; i < m; i++) {
-			if (board[i][0] == 'O') {
-				bfs(board, i, 0);
-			}
-
-			if (board[i][n - 1] == 'O') {
-				bfs(board, i, n - 1);
-			}
-		}
-
-		// merge O's on top & bottom boarder
-		for (int j = 0; j < n; j++) {
-			if (board[0][j] == 'O') {
-				bfs(board, 0, j);
-			}
-
-			if (board[m - 1][j] == 'O') {
-				bfs(board, m - 1, j);
-			}
-		}
-
-		// process the board
-		for (int i = 0; i < m; i++) {
-			for (int j = 0; j < n; j++) {
-				if (board[i][j] == 'O') {
-					board[i][j] = 'X';
-				} else if (board[i][j] == '#') {
-					board[i][j] = 'O';
-				}
-			}
-		}
-	}
-
-	private void bfs(char[][] board, int i, int j) {
-		int n = board[0].length;
-
-		// fill current first and then its neighbors
-		fillCell(board, i, j);
-
-		while (!queue.isEmpty()) {
-			int cur = queue.poll();
-			int x = cur / n;
-			int y = cur % n;
-
-			fillCell(board, x - 1, y);
-			fillCell(board, x + 1, y);
-			fillCell(board, x, y - 1);
-			fillCell(board, x, y + 1);
-		}
-	}
-
-	private void fillCell(char[][] board, int i, int j) {
-		int m = board.length;
-		int n = board[0].length;
-		if (i < 0 || i >= m || j < 0 || j >= n || board[i][j] != 'O')
-			return;
-
-		// add current cell is queue & then process its neighbors in bfs
-		queue.offer(i * n + j);
-		board[i][j] = '#';
-	}
+        fillCell($inputs, $x - 1, $y, $queue);
+        fillCell($inputs, $x + 1, $y, $queue);
+        fillCell($inputs, $x, $y + 1, $queue);
+        fillCell($inputs, $x, $y - 1, $queue);
+    }
 }
 
- */
+
+function fillCell(&$inputs, $i, $j, SplDoublyLinkedList $queue) {
+    $m = count($inputs);
+    $n = count($inputs[0]);
+
+    if ($i < 0 || $i >= $m || $j < 0 || $j >= $n || $inputs[$i][$j] != 'o') return;
+
+    $queue->push($i * $n + $j);
+    $inputs[$i][$j] = '#';
+}
+
